@@ -1,38 +1,28 @@
 package com.arhiser.todolist.screens.main;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.arhiser.todolist.R;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 public class Parser extends AppCompatActivity {
     TextView textView;
     ScrollView mScrollView;
-    Button but;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parser);
 
-        textView = findViewById(R.id.tex1);
-        but = findViewById(R.id.but1);
-        mScrollView = findViewById(R.id.SCROLLER_ID);
+        textView = (TextView)findViewById(R.id.tex1);
+        Button but = (Button) findViewById(R.id.but1);
+        mScrollView = (ScrollView) findViewById(R.id.SCROLLER_ID);
         but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +36,7 @@ public class Parser extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void...params) {
             try {
-                Document doc = Jsoup.connect("https://www.fifa.com/tournaments/mens/worldcup/qatar2022/media-releases/fifa-world-cup-tm-trophy-tour-by-coca-cola-kicks-off-global-journey-in-dubai").get();
+                Document doc = Jsoup.connect("https://kaktus.media/doc/416804_mejdynarodnyy_yniversitet_v_centralnoy_azii._chto_o_nem_izvestno.html").get();
                 words = doc.text();
             } catch(Exception e){e.printStackTrace();}
             return null;
@@ -70,5 +60,4 @@ public class Parser extends AppCompatActivity {
             });
         }
     }
-
 }

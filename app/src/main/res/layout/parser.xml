@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".screens.main.Parser">
-
     <ScrollView
         android:id="@+id/SCROLLER_ID"
         android:layout_width="fill_parent"
@@ -25,7 +24,6 @@
 
     </ScrollView>
 
-
     <Button
         android:id="@+id/but1"
         android:layout_width="match_parent"
@@ -37,5 +35,7 @@
         android:text="Button"
         tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="442dp" />
+
+
 
 </RelativeLayout>
